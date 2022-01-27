@@ -10,4 +10,3 @@ import { render } from './scripts/render';
 
 	return;
 })();
-

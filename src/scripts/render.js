@@ -1,4 +1,5 @@
-import burger from '../images/hamburger-5630646_1920.jpg';
+import makeHome from './home';
+import makeMenu from './menu';
 
 export function render() {
 
@@ -14,8 +15,10 @@ export function render() {
         const li = document.createElement('li');
         const a = document.createElement('a');
         a.setAttribute('href', '#');
+        a.setAttribute('data-tab-name', tab);
         a.classList.add('nav-link');
         a.textContent = tab;
+        a.addEventListener('click', selectRender)
 
         li.append(a);
         ul.append(li);
@@ -26,31 +29,8 @@ export function render() {
 
     // create main section
     const main = document.createElement('main');
-    const heroTextContainer = document.createElement('div');
-    heroTextContainer.classList.add('hero-text-container');
-
-    const h1 = document.createElement('h1');
-    h1.textContent = 'Lorem ipsum dolor sit amet.';
-
-    const para = document.createElement('p');
-    para.textContent = "I don't know what it means, but the burger here is the best one around the block.";
-
-    const button = document.createElement('button');
-    button.textContent = 'Order Now';
-    button.classList.add('hero-cta')
-
-    heroTextContainer.append(h1, para, button);
-
-    const heroImageContainer = document.createElement('div');
-    heroImageContainer.classList.add('hero-image-container');
-
-    const image = document.createElement('img');
-    image.setAttribute('src', burger);
-    image.classList.add('hero-image');
-
-    heroImageContainer.append(image);
-
-    main.append(heroTextContainer, heroImageContainer);
+    const home = makeHome();
+    main.append(home);
 
     // create footer
     const footer = document.createElement('footer');
@@ -58,4 +38,18 @@ export function render() {
     footer.textContent = `Company ${year}. All rights reserved.`;
 
     return [header, main, footer];
+}
+
+function selectRender(e) {
+    const main = document.querySelector('main');
+    main.innerHTML = '';
+
+    if (e.target.dataset.tabName === 'home') {
+        const home = makeHome();
+        main.append(home);
+    }
+    if (e.target.dataset.tabName === 'menu') {
+        const menu = makeMenu();
+        main.append(menu);
+    }
 }
