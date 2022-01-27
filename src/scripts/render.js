@@ -1,4 +1,5 @@
-import makeHome from './home'
+import makeHome from './home';
+import makeMenu from './menu';
 
 export function render() {
 
@@ -48,6 +49,7 @@ function selectRender(e) {
         main.append(home);
     }
     if (e.target.dataset.tabName === 'menu') {
-
+        const menu = makeMenu();
+        main.append(menu);
     }
 }
