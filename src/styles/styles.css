@@ -68,6 +68,7 @@ footer {
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,900;1,900&family=Roboto:wght@100;400;900&display=swap');
+
 @media (min-width: 768px) {
 	main {
 		flex-direction: row;
@@ -76,6 +77,6 @@ footer {
 		gap: 1em;
 	}
 	.hero-image-container {
-		width: 50%;
+		width: 500px;
 	}
 }
