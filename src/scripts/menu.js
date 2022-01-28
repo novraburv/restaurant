@@ -1,3 +1,5 @@
+"use strict"
+
 import burger from '../images/burger.jpg';
 import pizza from '../images/pizza.jpg';
 import sandwich from '../images/sandwich.jpg';

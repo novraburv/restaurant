@@ -1,5 +1,8 @@
+"use strict"
+
 import makeHome from './home';
 import makeMenu from './menu';
+import makeContact from './contact';
 
 export function render() {
 
@@ -51,5 +54,9 @@ function selectRender(e) {
     if (e.target.dataset.tabName === 'menu') {
         const menu = makeMenu();
         main.append(menu);
+    }
+    if (e.target.dataset.tabName === 'contact') {
+        const contact = makeContact();
+        main.append(contact);
     }
 }
