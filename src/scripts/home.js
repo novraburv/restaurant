@@ -1,3 +1,5 @@
+"use strict"
+
 import burger from '../images/hamburger-5630646_1920.jpg';
 import '../styles/home.css';
 
